@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ImmuneDictionary</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+        <h2>Immune Dictionary</h2>
+        <h3>Dictionary of immune responses to cytokine</h3>
+        <section id="immunology-table"><div id="immunology-table-container"></div></section>
+
+        <h2>Immune Dictionary (hardcoded)</h2>
+        <h3>Dictionary of immune responses to cytokine</h3>
+        <section id="hardcoded">
+            <div>
+                <div>
+                    <div class="primary1">IL-2</div>
+                    <div class="primary1">IL-15</div>
+                    <div class="primary1">IL-9</div>
+                    <div class="primary2">TPO</div>
+                    <div class="primary10">PRL</div>
+                    <div class="primary10">AdipoQ</div>
+                    <div class="primary2">NOG</div>
+                </div>
+                <div>
+                    <div class="primary1">IL-4</div>
+                    <div class="primary1">IL-7</div>
+                    <div class="primary1">IL-21</div>
+                    <div class="primary4">PSPN</div>
+                    <div class="primary10">LEP</div>
+                    <div class="primary10">ADSF</div>
+                    <div class="primary2">DCN</div>
+                </div>
+                <div>
+                    <div class="primary1">IL-13</div>
+                    <div class="primary1">TSLP</div>
+                    <div class="primary4">GDNF</div>
+                    <div class="primary5">IFN-a</div>
+                    <div class="primary13">IL-17A</div>
+                    <div class="primary9">IL-6</div>
+                    <div class="primary9">OSM</div>
+                </div>
+                <div>
+                    <div class="primary3">C3A</div>
+                    <div class="primary4">TGF-β</div>
+                    <div class="primary6">IL-10</div>
+                    <div class="primary5">IFN-β</div>
+                    <div class="primary13">IL-17B</div>
+                    <div class="primary9">IL-11</div>
+                    <div class="primary9">CT-1</div>
+                </div>
+                <div>
+                    <div class="primary3">C5A</div>
+                    <div class="primary6">IL-19</div>
+                    <div class="primary5">IFN-ε</div>
+                    <div class="primary13">IL-17C</div>
+                    <div class="primary9">IL-27</div>
+                    <div class="primary9">NP</div>
+                </div>
+                <div>
+                    <div class="primary8">IL-33</div>
+                    <div class="primary7">IL-3</div>
+                    <div class="primary6">IL-20</div>
+                    <div class="primary5">IFN-κ</div>
+                    <div class="primary13">IL-17D</div>
+                    <div class="primary9">IL-30</div>
+                    <div class="primary9">IL-12</div>
+                </div>
+                <div>
+                    <div class="primary8">IL-1β</div>
+                    <div class="primary8">IL-36α</div>
+                    <div class="primary7">IL-5</div>
+                    <div class="primary6">IL-22</div>
+                    <div class="primary5">IFN-γ</div>
+                    <div class="primary13">IL-17E</div>
+                    <div class="primary9">IL-31</div>
+                    <div class="primary9">IL-23</div>
+                </div>
+                <div>
+                    <div class="primary8">IL-1α</div>
+                    <div class="primary8">IL-1Ra</div>
+                    <div class="primary8">IL-36Ra</div>
+                    <div class="primary7">GM-CSF</div>
+                    <div class="primary6">IL-24</div>
+                    <div class="primary5">IFN-λ</div>
+                    <div class="primary13">IL-17F</div>
+                    <div class="primary9">LIF</div>
+                    <div class="primary9">IL-Y</div>
+                </div>
+                <div>
+                    <div class="primary8">IL-18</div>
+                    <div class="primary12">FLT3L</div>
+                    <div class="primary11">LT-a</div>
+                    <div class="primary11">LT-B</div>
+                    <div class="primary11">OX40L</div>
+                    <div class="primary11">CD27L</div>
+                    <div class="primary11">RANKL</div>
+                    <div class="primary11">LIGHT</div>
+                </div>
+                <div>
+                    <div class="primary12">IL-34</div>
+                    <div class="primary12">SCF</div>
+                    <div class="primary11">TNF-a</div>
+                    <div class="primary11">CD40L</div>
+                    <div class="primary11">CD30L</div>
+                    <div class="primary11">TWEAK</div>
+                    <div class="primary11">TL1A</div>
+                </div>
+                <div>
+                    <div class="primary12">M-CSF</div>
+                    <div class="primary12">EGF</div>
+                    <div class="primary12">FGF-B</div>
+                    <div class="primary11">FasL</div>
+                    <div class="primary11">4-1BBL</div>
+                    <div class="primary11">APRIL</div>
+                    <div class="primary11">GITRL</div>
+                </div>
+                <div>
+                    <div class="primary12">G-CSF</div>
+                    <div class="primary12">VEGF</div>
+                    <div class="primary12">HGF</div>
+                    <div class="primary12">IGF</div>
+                    <div class="primary11">TRAIL</div>
+                    <div class="primary11">BAFF</div>
+                    <div class="empty">&nbsp;</div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            (function() {
+                const slugify = (slug) => {
+                    return slug.toString().toLowerCase()
+                        .replace(/\s+/g, '-')           // Replace spaces with -
+                        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+                        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+                        .replace(/^-+/, '')             // Trim - from start of text
+                        .replace(/-+$/, '');            // Trim - from end of text
+                };
+
+                const generateCytokineHTML = (cytokine) => {
+                    const { Family, Cytokine } = cytokine;
+                    const familyClass = slugify(Family);
+                    const html = `<div class="primary-${familyClass}">${Cytokine}</div>`;
+
+                    return html;
+                };
+
+                const rowSize = 9;
+                const columnSize = 12;
+                const cellLimit = rowSize * columnSize;
+                const rawCytokines = [];
+                let indexedCytokines = [];
+                const groupedCytokines = [];
+
+                fetch('data/CytokineList.json')
+                    .then((response) => {
+                        if (!response?.ok) {
+                            throw new Error('Could not fetch cytokine list');
+                        }
+
+                        return response.json();
+                    })
+                    .then((cytokines) => {
+                        const immunologyTableContainer = document.getElementById('immunology-table-container');
+                        let html = '';
+                        cytokines.forEach((cytokine) => {
+                            // Hardcode the position for the last one
+                            if (!cytokine?.Family || !cytokine?.Cytokine) {
+                                return;
+                            }
+
+                            if (!cytokine?.Position) {
+                                throw new Error('no position');
+                            }
+
+                            rawCytokines.push(cytokine);
+                        });
+
+                        // copilot can you reindex rawCytokines and index by cytokine's Position property here?
+                        indexedCytokines = rawCytokines.reduce( (acc, cytokine) => {
+                            acc[cytokine.Position] = cytokine;
+                            return acc;
+                        }, {});
+
+                        for (let i = 0; i<columnSize; i++) {
+                            let row = Array(rowSize).fill(null);
+                            for (let j = 0; j<rowSize; j++) {
+                                const index = i * rowSize + j + 1; // start at 1
+                                const cytokine = indexedCytokines[index];
+                                if (cytokine) {
+                                    row[j] = {
+                                        'cytokine': cytokine,
+                                        'html': generateCytokineHTML(cytokine),
+                                    };
+                                } else if (index === cellLimit) {
+                                    // the last one is a special one that is not in the list
+                                    row[j] = {
+                                        'cytokine': {
+                                            'Family': '',
+                                            'Cytokine': '',
+                                        },
+                                        'html': '<div class="empty">&nbsp;</div>'
+                                    }
+                                }
+                            }
+
+                            row = row.filter((cytokine) => !!cytokine);
+                            html += `<div class="row">${row.map((cytokine) => cytokine.html).join('')}</div>`;
+                            groupedCytokines.push(row);
+                        }
+
+                        if (groupedCytokines.length) {
+                            immunologyTableContainer.innerHTML = html;
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            })();
+        </script>
+    </body>
+</html>
