@@ -23,7 +23,7 @@ section#hardcoded > div > div {
     color:#2B4441;
 }
 
-.primary2 {
+.primary2, .primary-other-gray {
     background-color: #A5A6A6;
 }
 
@@ -32,7 +32,7 @@ section#hardcoded > div > div {
     color:#11363E;
 }
 
-.primary4/*, .primary-other*/ {
+.primary4, .primary-other-green {
     background-color: #91A15F;
     color:#173A3F;
 }
@@ -59,7 +59,7 @@ section#hardcoded > div > div {
     color: #11363E;
 }
 
-.primary10 {
+.primary10, .primary-other-brown {
     background-color: #98847D;
     color: #11363E;
 }
@@ -79,4 +79,9 @@ section#hardcoded > div > div {
 
 .empty {
     background-color: transparent;
+}
+
+span.position {
+    font-size: 0.8rem;
+    font-style: italic;
 }

@@ -139,9 +139,12 @@
                 };
 
                 const generateCytokineHTML = (cytokine) => {
-                    const { Family, Cytokine } = cytokine;
-                    const familyClass = slugify(Family);
-                    const html = `<div class="primary-${familyClass}">${Cytokine}</div>`;
+                    const { Family, Cytokine, Position } = cytokine;
+                    let familyClass = slugify(Family);
+                    if (familyClass === 'other' && customStyleMap[Position]) {
+                        familyClass = customStyleMap[Position];
+                    }
+                    const html = `<div class="primary-${familyClass}">${Cytokine} <span class="position">${Position}</span></div>`;
 
                     return html;
                 };
@@ -152,6 +155,19 @@
                 const rawCytokines = [];
                 let indexedCytokines = [];
                 const groupedCytokines = [];
+
+                const customStyleMap = {
+                    31: 'other-green',
+                    23: 'other-green',
+                    15: 'other-green',
+                    6: 'other-gray',
+                    9: 'other-gray',
+                    18: 'other-gray',
+                    7: 'other-brown',
+                    8: 'other-brown',
+                    16: 'other-brown',
+                    17: 'other-brown'
+                }
 
                 fetch('data/CytokineList.json')
                     .then((response) => {
