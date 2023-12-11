@@ -1,0 +1,82 @@
+section > div > div {
+    display: inline-block;
+    width: calc(100% / 12);
+}
+
+section > div > div > div {
+    border:2px solid #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: -3px;
+    padding: 1rem 0;
+}
+
+section#hardcoded > div > div {
+    margin-right: -7px;
+}
+
+.primary1, .primary-common-chainil-13tslp {
+    background-color: #FFC45A;
+    color:#2B4441;
+}
+
+.primary2 {
+    background-color: #A5A6A6;
+}
+
+.primary3, .primary-complement {
+    background-color: #B7562F;
+    color:#11363E;
+}
+
+.primary4/*, .primary-other*/ {
+    background-color: #91A15F;
+    color:#173A3F;
+}
+
+.primary5, .primary-interferon {
+    background-color: #1FA98B;
+}
+
+.primary6, .primary-il-10 {
+    background-color: #DE70B1;
+}
+
+.primary7, .primary-common-chain {
+    background-color: #8568C0;
+}
+
+.primary8, .primary-il-1 {
+    background-color: #912A6E;
+    color: #F3ADDC;
+}
+
+.primary9, .primary-il-6il-12 {
+    background-color: #198591;
+    color: #11363E;
+}
+
+.primary10 {
+    background-color: #98847D;
+    color: #11363E;
+}
+
+.primary11, .primary-tnf {
+    background-color: #52B8C4;
+}
+
+.primary12, .primary-growth-factor {
+    background-color: #48308E;
+    color: #BEBFF3;
+}
+
+.primary13, .primary-il-17 {
+    background-color: #096854;
+}
+
+.empty {
+    background-color: transparent;
+}
