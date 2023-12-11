@@ -8,6 +8,7 @@
         <h2>Immune Dictionary</h2>
         <h3>Dictionary of immune responses to cytokine</h3>
         <section id="immunology-table"><div id="immunology-table-container"></div></section>
+        <p>Cui, A. et al., Dictionary of immune responses to cytokines at single-cell resolution. Nature (2023).</p>
 
         <h2>Immune Dictionary (hardcoded)</h2>
         <h3>Dictionary of immune responses to cytokine</h3>
@@ -144,7 +145,16 @@
                     if (familyClass === 'other' && customStyleMap[Position]) {
                         familyClass = customStyleMap[Position];
                     }
-                    const html = `<div class="primary-${familyClass}">${Cytokine} <span class="position">${Position}</span></div>`;
+
+                    // If the cytokine has a custom alias, use that instead of the default
+                    // Some of the "other" cytokines have this
+                    let CytokineText = Cytokine;
+
+                    if (customAliasOverrideMap.includes(Position) && cytokine.Human_gene_symbol) {
+                        CytokineText = cytokine.Human_gene_symbol;
+                    }
+
+                    const html = `<div class="primary-${familyClass}">${CytokineText} <span class="position">${Position}</span></div>`;
 
                     return html;
                 };
@@ -156,6 +166,7 @@
                 let indexedCytokines = [];
                 const groupedCytokines = [];
 
+                // The "Other" cytokines have 3 subgroups of colors/styling, so we need to manually assign them
                 const customStyleMap = {
                     31: 'other-green',
                     23: 'other-green',
@@ -168,6 +179,24 @@
                     16: 'other-brown',
                     17: 'other-brown'
                 }
+
+                // Some cytokines use the Human gene symbol name
+                const customAliasOverrideMap = [
+                    9, 16, 18
+                ]
+
+                const renameKeys = obj => Object
+                    .entries(obj)
+                    .reduce((acc, [key, value]) => {
+                        const newKey = key
+                            .replace(/\s+/g, '_')           // Replace spaces with -
+                            .replace(/\_\_+/g, '_')         // Replace multiple - with single -
+
+                        return {
+                            ...acc,
+                            ...{ [newKey]: value }
+                        };
+                    }, {});
 
                 fetch('data/CytokineList.json')
                     .then((response) => {
@@ -189,6 +218,8 @@
                             if (!cytokine?.Position) {
                                 throw new Error('no position');
                             }
+
+                            cytokine = renameKeys(cytokine);
 
                             rawCytokines.push(cytokine);
                         });
