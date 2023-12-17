@@ -2,21 +2,21 @@ body {
     padding-top: 8rem;
 }
 
-div#headings {
+div#headlines {
     color: #3259B5;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
 }
 
-div#headings h2 {
+div#headlines h2 {
     margin: 0;
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-div#headings h3 {
+div#headlines h3 {
     font-size: 1.5rem;
 }
 
@@ -41,13 +41,16 @@ section#hardcoded > div > div {
     margin-right: -7px;
 }
 
+.cytokine:hover {
+    filter: brightness(115%);
+}
+
 .primary1, .primary-common-chainil-13tslp {
     background-color: #FFC45A;
     color:#2B4441;
 }
 
 .primary-common-chainil-13tslp:hover {
-    background-color: #FFC45A; /* original base color */
     box-shadow: #CC9C48 1px 1px 0px inset, #FFD763 -1px -1px 0 inset;
 }
 
@@ -57,7 +60,6 @@ section#hardcoded > div > div {
 }
 
 .primary-other-gray:hover {
-    background-color: #A4A6A6;
     box-shadow: #838484 1px 1px 0px inset, #B4B6B6 -1px -1px 0 inset;
 }
 
@@ -67,7 +69,6 @@ section#hardcoded > div > div {
 }
 
 .primary3:hover, .primary-complement:hover {
-    background-color: #ab5c39;
     box-shadow: #88492D 1px 1px 0px inset, #BC653E -1px -1px 0 inset;
 }
 
@@ -77,7 +78,6 @@ section#hardcoded > div > div {
 }
 
 .primary-other-green:hover {
-    background-color: #91A160;
     box-shadow: #74804C 1px 1px 0px inset, #9FB169 -1px -1px 0 inset;
 }
 
@@ -87,7 +87,6 @@ section#hardcoded > div > div {
 }
 
 .primary-interferon:hover {
-    background-color: #51a78d;
     box-shadow: #408570 1px 1px 0px inset, #59B79B -1px -1px 0 inset;
 }
 
@@ -97,7 +96,6 @@ section#hardcoded > div > div {
 }
 
 .primary-il-10:hover {
-    background-color: #d176ad;
     box-shadow: #A75E8A 1px 1px 0px inset, #E581BE -1px -1px 0 inset;
 }
 
@@ -107,7 +105,6 @@ section#hardcoded > div > div {
 }
 
 .primary-common-chain:hover {
-    background-color: #8169bb;
     box-shadow: #675495 1px 1px 0px inset, #8D73CD -1px -1px 0 inset;
 }
 
@@ -117,7 +114,6 @@ section#hardcoded > div > div {
 }
 
 .primary-il-1:hover {
-    background-color: #86316c;
     box-shadow: #6b2756 1px 1px 0px inset, #933576 -1px -1px 0 inset;
 }
 
@@ -127,7 +123,6 @@ section#hardcoded > div > div {
 }
 
 .primary-il-6il-12:hover {
-    background-color: #3F838F;
     box-shadow: #326872 1px 1px 0px inset, #45909D -1px -1px 0 inset;
 }
 
@@ -137,7 +132,6 @@ section#hardcoded > div > div {
 }
 
 .primary-other-brown:hover {
-    background-color: #95857D;
     box-shadow: #776a64 1px 1px 0px inset, #A39289 -1px -1px 0 inset;
 }
 
@@ -147,7 +141,6 @@ section#hardcoded > div > div {
 }
 
 .primary-tnf:hover {
-    background-color: #6EB6C2;
     box-shadow: #58919B 1px 1px 0px inset, #79C8D5 -1px -1px 0 inset;
 }
 
