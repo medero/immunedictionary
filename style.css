@@ -118,6 +118,7 @@ div#immunology-table-container > div:nth-child(83) { grid-column: 12; grid-row: 
 div#immunology-table-container > div:nth-child(84) { grid-column: 12; grid-row: 6; }
 div#immunology-table-container > div:nth-child(85) { grid-column: 12; grid-row: 7; }
 div#immunology-table-container > div:nth-child(86) { grid-column: 12; grid-row: 8; }
+div#immunology-table-container > div:nth-child(87) { grid-column: 1/span 5; grid-row: 1/span 2; }
 
 section > div > div {
     border:2px solid #fff;
