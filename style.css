@@ -172,9 +172,11 @@ span.position {
     font-style: italic;
 }
 
+/*
 div#immunology-table-container {
     min-width:62rem;
 }
+*/
 
 .tooltip {
     background-color: white;
