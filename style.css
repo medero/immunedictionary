@@ -2,21 +2,21 @@ body {
     padding-top: 8rem;
 }
 
-div#headlines {
+div#headings {
     color: #3259B5;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
 }
 
-div#headlines h2 {
+div#headings h2 {
     margin: 0;
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-div#headlines h3 {
+div#headings h3 {
     font-size: 1.5rem;
 }
 
