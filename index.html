@@ -2,12 +2,17 @@
 <html>
     <head>
         <title>ImmuneDictionary</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        <h2>Immune Dictionary</h2>
-        <h3>Dictionary of immune responses to cytokine</h3>
-        <section id="immunology-table"><div id="immunology-table-container"></div></section>
+        <section id="immunology-table">
+            <div id="headings">
+                <h2>Immune Dictionary</h2>
+                <h3>Dictionary of immune responses to cytokine</h3>
+            </div>
+            <div id="immunology-table-container"></div>
+        </section>
         <p>Cui, A. et al., Dictionary of immune responses to cytokines at single-cell resolution. Nature (2023).</p>
 
         <h2>Immune Dictionary (hardcoded)</h2>
@@ -140,7 +145,7 @@
                 };
 
                 const generateCytokineHTML = (cytokine) => {
-                    const { Family, Cytokine, Position } = cytokine;
+                    const { Alternative_names, Family, Cytokine, Position } = cytokine;
                     let familyClass = slugify(Family);
                     if (familyClass === 'other' && customStyleMap[Position]) {
                         familyClass = customStyleMap[Position];
@@ -154,7 +159,10 @@
                         CytokineText = cytokine.Human_gene_symbol;
                     }
 
-                    const html = `<div class="primary-${familyClass}">${CytokineText} <span class="position">${Position}</span></div>`;
+                    let positionHtml = `&nbsp;<span class="position">${Position}</span>`;
+                    positionHtml = '';
+
+                    const html = `<div data-family="${Family}" data-name-raw="${Cytokine}" data-name-pretty="${Alternative_names}" class="cytokine primary-${familyClass}">${CytokineText}${positionHtml}</div>`;
 
                     return html;
                 };
@@ -165,6 +173,9 @@
                 const rawCytokines = [];
                 let indexedCytokines = [];
                 const groupedCytokines = [];
+                let doseJson = null;
+                let cytokineJson = null;
+                const container = document.getElementById('immunology-table-container');
 
                 // The "Other" cytokines have 3 subgroups of colors/styling, so we need to manually assign them
                 const customStyleMap = {
@@ -185,6 +196,39 @@
                     9, 16, 18
                 ]
 
+                const showTooltip = (element, cytokineId) => {
+                    let tooltip = document.getElementById('cytokine-tooltip');
+                    const cytokineNameRaw = element.getAttribute('data-name-raw');
+                    const cytokineNamePretty = element.getAttribute('data-name-pretty');
+                    const familyName = element.getAttribute('data-family');
+                    window.cytokineNameRaw = cytokineNameRaw;
+
+                    if (!tooltip) {
+                        tooltip = document.createElement('div');
+                        tooltip.id = 'cytokine-tooltip';
+                        tooltip.classList.add('tooltip');
+                        //document.body.appendChild(tooltip);
+                        container.appendChild(tooltip);
+                    }
+
+                    //tooltip.innerHTML = description;
+                    tooltip.innerHTML = `Cytokine: ${cytokineNameRaw}<br>Alternative name: ${cytokineNamePretty}<br>Family: (${familyName})`;
+                    tooltip.style.display = 'block';
+                    positionTooltip(element, tooltip)
+                }
+
+                const positionTooltip = (element, tooltip) => {
+                    const elementRect = element.getBoundingClientRect();
+                    const containerRect = container.getBoundingClientRect();
+
+                    // Calculate the position based on the element's position in the viewport and the current scroll position
+                    let tooltipLeft = elementRect.left + window.scrollX + (elementRect.width / 2) - (tooltip.offsetWidth / 2);
+                    let tooltipTop = elementRect.top + window.scrollY - tooltip.offsetHeight - 10; // 10px above the element
+
+                    tooltip.style.left = `${tooltipLeft}px`;
+                    tooltip.style.top = `${tooltipTop}px`;
+                }
+
                 const renameKeys = obj => Object
                     .entries(obj)
                     .reduce((acc, [key, value]) => {
@@ -198,6 +242,7 @@
                         };
                     }, {});
 
+                const immunologyTableContainer = document.getElementById('immunology-table-container');
                 fetch('data/CytokineList.json')
                     .then((response) => {
                         if (!response?.ok) {
@@ -207,7 +252,6 @@
                         return response.json();
                     })
                     .then((cytokines) => {
-                        const immunologyTableContainer = document.getElementById('immunology-table-container');
                         let html = '';
                         cytokines.forEach((cytokine) => {
                             // Hardcode the position for the last one
@@ -260,6 +304,17 @@
                         if (groupedCytokines.length) {
                             immunologyTableContainer.innerHTML = html;
                         }
+
+                        immunologyTableContainer.addEventListener('mouseover', (event) => {
+                            const isCytokineElement = (target) => target.nodeType === 1 && event.target.classList.contains('cytokine');
+                            const element = event?.target && isCytokineElement(event.target) ? event.target : null;
+                            if (!element) return;
+
+                            const cytokineName = element.getAttribute('data-name-raw');
+                            if (!cytokineName || cytokineName.length === 0) return;
+
+                            showTooltip(element);
+                        })
                     })
                     .catch((error) => {
                         console.error(error);
