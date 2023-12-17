@@ -298,7 +298,8 @@
                             }
 
                             row = row.filter((cytokine) => !!cytokine);
-                            html += `<div class="row">${row.map((cytokine) => cytokine.html).join('')}</div>`;
+                            //html += `<div class="row">${row.map((cytokine) => cytokine.html).join('')}</div>`;
+                            html += `${row.map((cytokine) => cytokine.html).join('')}`;
                             groupedCytokines.push(row);
                         }
 
