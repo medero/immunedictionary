@@ -283,7 +283,7 @@ section#hardcoded > div > div {
 .cytokine:hover {
     filter: brightness(115%);
     transition: 250ms;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .primary1, .primary-common-chainil-13tslp {
@@ -571,12 +571,6 @@ span.position {
     font-size: 0.8rem;
     font-style: italic;
 }
-
-/*
-div#immunology-table-container {
-    min-width:62rem;
-}
-*/
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
