@@ -277,11 +277,13 @@ section#hardcoded > div > div {
 }
 
 .cytokine {
+    border-radius: 3px;
     filter: brightness(100%);
 }
 
 .cytokine:hover {
     filter: brightness(115%);
+    font-weight: bold;
     transition: 250ms;
     transform: scale(1.03);
 }
@@ -588,9 +590,11 @@ span.position {
 .tooltip {
     background-color: white;
     border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Gentle box shadow */
     position: absolute;
     padding: .7rem;
-    line-height: 1.2rem;
+    line-height: 1.35rem;
     text-align: left;
     display: none;
     z-index: 100;
