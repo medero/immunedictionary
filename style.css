@@ -125,7 +125,7 @@ div#immunology-table-container > div:nth-child(86) { grid-column: 12; grid-row: 
 div#immunology-table-container > div:nth-child(87) { grid-column: 1/span 5; grid-row: 1/span 2; }
 
 section > div > div {
-    border:2px solid #fff;
+    border:1px solid #fff;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-size: 1rem;
@@ -136,8 +136,12 @@ section > div > div {
 }
 
 @media only screen and (max-width: 900px) {
+    div#immunology-table-container {
+        grid-gap: 0;
+    }
     div#immunology-table-container > div:nth-child(87) { grid-column: 1; grid-row: 1; display:none; }
     section > div > div {
+        border:1px solid #fff;
         font-size: 0.6rem;
         padding: 0.6rem 0;
     }
