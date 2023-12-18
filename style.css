@@ -134,7 +134,7 @@ section > div > div {
     border:1px solid #fff;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 1.1rem;
     box-sizing: border-box;
     text-align: center;
     margin-top: -3px;
@@ -151,7 +151,7 @@ section > div > div {
     section > div > div {
         border:1px solid #fff;
         font-size: 0.5rem;
-        padding: 0.6rem 0;
+        padding: 0.4rem 0;
     }
 
     div#immunology-table-container > div:nth-child(1) { grid-row: 4; }
@@ -473,67 +473,67 @@ body.gradient .primary13, body.gradient .primary-il-17 {
 */
 
 body.gradient .primary1, body.gradient .primary-common-chainil-13tslp {
-    background: linear-gradient(to right, #FFC45A, #FFD763);
+    background: linear-gradient(to left, #FFC45A, #FFD763);
     color: #2B4441;
 }
 
 body.gradient .primary2, body.gradient .primary-other-gray {
-    background: linear-gradient(to right, #A4A6A6, #B4B6B6);
+    background: linear-gradient(to left, #A4A6A6, #B4B6B6);
     color: #1B353D;
 }
 
 body.gradient .primary3, body.gradient .primary-complement {
-    background: linear-gradient(to right, #ab5c39, #BC653E);
+    background: linear-gradient(to left, #ab5c39, #BC653E);
     color: #1B353D;
 }
 
 body.gradient .primary4, body.gradient .primary-other-green {
-    background: linear-gradient(to right, #91A160, #9FB169);
+    background: linear-gradient(to left, #91A160, #9FB169);
     color: #1B353D;
 }
 
 body.gradient .primary5, body.gradient .primary-interferon {
-    background: linear-gradient(to right, #51a78d, #59B79B);
+    background: linear-gradient(to left, #51a78d, #59B79B);
     color: #1B353D;
 }
 
 body.gradient .primary6, body.gradient .primary-il-10 {
-    background: linear-gradient(to right, #d176ad, #E581BE);
+    background: linear-gradient(to left, #d176ad, #E581BE);
     color: #1B353D;
 }
 
 body.gradient .primary7, body.gradient .primary-common-chain {
-    background: linear-gradient(to right, #8169bb, #8D73CD);
+    background: linear-gradient(to left, #8169bb, #8D73CD);
     color: #1B353D;
 }
 
 body.gradient .primary8, body.gradient .primary-il-1 {
-    background: linear-gradient(to right, #86316c, #933576);
+    background: linear-gradient(to left, #86316c, #933576);
     color: #f4aedd;
 }
 
 body.gradient .primary9, body.gradient .primary-il-6il-12 {
-    background: linear-gradient(to right, #3F838F, #45909D);
+    background: linear-gradient(to left, #3F838F, #45909D);
     color: #11363E;
 }
 
 body.gradient .primary10, body.gradient .primary-other-brown {
-    background: linear-gradient(to right, #95857D, #A39289);
+    background: linear-gradient(to left, #95857D, #A39289);
     color: #11363E;
 }
 
 body.gradient .primary11, body.gradient .primary-tnf {
-    background: linear-gradient(to right, #6EB6C2, #79C8D5);
+    background: linear-gradient(to left, #6EB6C2, #79C8D5);
     color: #134C60;
 }
 
 body.gradient .primary12, body.gradient .primary-growth-factor {
-    background: linear-gradient(to right, #453189, #4B3596);
+    background: linear-gradient(to left, #453189, #4B3596);
     color: #BFBEF3;
 }
 
 body.gradient .primary13, body.gradient .primary-il-17 {
-    background: linear-gradient(to right, #0A6954, #0B735C);
+    background: linear-gradient(to left, #0A6954, #0B735C);
     color: #1B353D;
 }
 
