@@ -473,67 +473,93 @@ body.gradient .primary13, body.gradient .primary-il-17 {
 */
 
 body.gradient .primary1, body.gradient .primary-common-chainil-13tslp {
-    background: linear-gradient(to left, #FFC45A, #FFD763);
+    background: linear-gradient(to left, #FFC45A, #FFEB6C);
+    background: linear-gradient(to left, #FFC45A, #FFE167); /* 15% */
+    background: linear-gradient(to left, #FFC45A, #FFEB6C); /* 20% */
     color: #2B4441;
 }
 
 body.gradient .primary2, body.gradient .primary-other-gray {
     background: linear-gradient(to left, #A4A6A6, #B4B6B6);
+    background: linear-gradient(to left, #A4A6A6, #BCBEBE);
+    background: linear-gradient(to left, #A4A6A6, #C4C7C7);
     color: #1B353D;
 }
 
 body.gradient .primary3, body.gradient .primary-complement {
     background: linear-gradient(to left, #ab5c39, #BC653E);
+    background: linear-gradient(to left, #ab5c39, #C46941);
+    background: linear-gradient(to left, #ab5c39, #CD6E44);
     color: #1B353D;
 }
 
 body.gradient .primary4, body.gradient .primary-other-green {
     background: linear-gradient(to left, #91A160, #9FB169);
+    background: linear-gradient(to left, #91A160, #A6B96E);
+    background: linear-gradient(to left, #91A160, #AEC173);
     color: #1B353D;
 }
 
 body.gradient .primary5, body.gradient .primary-interferon {
     background: linear-gradient(to left, #51a78d, #59B79B);
+    background: linear-gradient(to left, #51a78d, #5DC0A2);
+    background: linear-gradient(to left, #51a78d, #61C8A9);
     color: #1B353D;
 }
 
 body.gradient .primary6, body.gradient .primary-il-10 {
     background: linear-gradient(to left, #d176ad, #E581BE);
+    background: linear-gradient(to left, #d176ad, #F087C6);
+    background: linear-gradient(to left, #d176ad, #FA8DCF);
     color: #1B353D;
 }
 
 body.gradient .primary7, body.gradient .primary-common-chain {
     background: linear-gradient(to left, #8169bb, #8D73CD);
+    background: linear-gradient(to left, #8169bb, #9478D7);
+    background: linear-gradient(to left, #8169bb, #9A7EE0);
     color: #1B353D;
 }
 
 body.gradient .primary8, body.gradient .primary-il-1 {
     background: linear-gradient(to left, #86316c, #933576);
+    background: linear-gradient(to left, #86316c, #9A387C);
+    background: linear-gradient(to left, #86316c, #A03A81);
     color: #f4aedd;
 }
 
 body.gradient .primary9, body.gradient .primary-il-6il-12 {
     background: linear-gradient(to left, #3F838F, #45909D);
+    background: linear-gradient(to left, #3F838F, #4896A4);
+    background: linear-gradient(to left, #3F838F, #4B9DAB);
     color: #11363E;
 }
 
 body.gradient .primary10, body.gradient .primary-other-brown {
     background: linear-gradient(to left, #95857D, #A39289);
+    background: linear-gradient(to left, #95857D, #AB988F);
+    background: linear-gradient(to left, #95857D, #B29F96);
     color: #11363E;
 }
 
 body.gradient .primary11, body.gradient .primary-tnf {
     background: linear-gradient(to left, #6EB6C2, #79C8D5);
+    background: linear-gradient(to left, #6EB6C2, #7ED1DF);
+    background: linear-gradient(to left, #6EB6C2, #84DAE8);
     color: #134C60;
 }
 
 body.gradient .primary12, body.gradient .primary-growth-factor {
     background: linear-gradient(to left, #453189, #4B3596);
+    background: linear-gradient(to left, #453189, #4F389D);
+    background: linear-gradient(to left, #453189, #523AA4);
     color: #BFBEF3;
 }
 
 body.gradient .primary13, body.gradient .primary-il-17 {
     background: linear-gradient(to left, #0A6954, #0B735C);
+    background: linear-gradient(to left, #0A6954, #0B7860);
+    background: linear-gradient(to left, #0A6954, #0C7E64);
     color: #1B353D;
 }
 
