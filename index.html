@@ -7,6 +7,10 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
+        <div id="button-container">
+            <button id="toggle">Toggle gradient (experiment)</button>
+        </div>
+
         <section id="immunology-table">
             <div id="immunology-table-container"></div>
         </section>
@@ -317,6 +321,10 @@
                             cytokine.addEventListener('mouseout', (event) => {
                                 document.getElementById('cytokine-tooltip').style.display = 'none';
                             });
+                        });
+
+                        document.getElementById('toggle').addEventListener('click', () => {
+                            document.body.classList.toggle('gradient');
                         });
                     })
                     .catch((error) => {
