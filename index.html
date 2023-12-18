@@ -201,7 +201,6 @@
                     const cytokineNameRaw = element.getAttribute('data-name-raw');
                     const cytokineNamePretty = element.getAttribute('data-name-pretty');
                     const familyName = element.getAttribute('data-family');
-                    window.cytokineNameRaw = cytokineNameRaw;
 
                     if (!tooltip) {
                         tooltip = document.createElement('div');
@@ -219,10 +218,16 @@
 
                 const positionTooltip = (element, tooltip) => {
                     const elementRect = element.getBoundingClientRect();
+                    const tooltipRect = tooltip.getBoundingClientRect();
                     const containerRect = container.getBoundingClientRect();
 
                     // Calculate the position based on the element's position in the viewport and the current scroll position
                     let tooltipLeft = elementRect.left + window.scrollX + (elementRect.width / 2) - (tooltip.offsetWidth / 2);
+                    tooltipLeft = Math.max(tooltipLeft, 10); // 10px padding from left edge
+
+                    const rightEdge = window.innerWidth || document.documentElement.clientWidth;
+                    tooltipLeft = Math.min(tooltipLeft, rightEdge - tooltipRect.width - 10); // 10px padding from right edge
+
                     let tooltipTop = elementRect.top + window.scrollY - tooltip.offsetHeight - 10; // 10px above the element
 
                     tooltip.style.left = `${tooltipLeft}px`;

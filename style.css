@@ -574,19 +574,6 @@ span.position {
     font-style: italic;
 }
 
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-    section#immunology-table {
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-
-    section > div > div > div {
-        padding: 0.5rem 0; /* Even smaller padding for very small screens */
-        font-size: 0.7rem; /* Even smaller font size for very small screens */
-        word-break: break-word; /* Allow long words to wrap */
-    }
-}
-
 .tooltip {
     background-color: white;
     border: 1px solid #ccc;
@@ -600,4 +587,22 @@ span.position {
     z-index: 100;
     max-width: 20rem !important;
     width: auto !important;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .tooltip {
+        line-height: 1rem;
+        min-width: 7rem;
+    }
+
+    section#immunology-table {
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    section > div > div > div {
+        padding: 0.5rem 0; /* Even smaller padding for very small screens */
+        font-size: 0.7rem; /* Even smaller font size for very small screens */
+        word-break: break-word; /* Allow long words to wrap */
+    }
 }
