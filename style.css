@@ -27,8 +27,8 @@ section#immunology-table {
 
 div#immunology-table-container {
     display: grid;
-    grid-template-columns: repeat(12, 100px);
-    grid-template-rows: repeat(9, 60px); /* example fixed height */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-gap: 3px;
 }
 
@@ -134,6 +134,15 @@ section > div > div {
     margin-top: -3px;
     padding: 1.25rem 0;
 }
+
+@media only screen and (max-width: 900px) {
+    div#immunology-table-container > div:nth-child(87) { grid-column: 1; grid-row: 1; display:none; }
+    section > div > div {
+        font-size: 0.6rem;
+        padding: 0.6rem 0;
+    }
+}
+
 
 section#hardcoded > div > div {
     display: inline-block;
